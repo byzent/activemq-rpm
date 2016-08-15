@@ -85,7 +85,7 @@ install --directory ${RPM_BUILD_ROOT}/usr/bin
 cp -r lib ${RPM_BUILD_ROOT}%{libdir}
 cp -r webapps/admin ${RPM_BUILD_ROOT}%{libdir}/webapps
 cp -r webapps/api ${RPM_BUILD_ROOT}%{libdir}/webapps
-cp -r webapps/fileserver ${RPM_BUILD_ROOT}%{libdir}/webapps
+
 
 # Info provider
 install %{SOURCE5} ${RPM_BUILD_ROOT}/%{libexecdir}/info-provider-activemq
