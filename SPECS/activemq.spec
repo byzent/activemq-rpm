@@ -78,7 +78,6 @@ install README.txt LICENSE NOTICE ${RPM_BUILD_ROOT}%{docsdir}
 cp -r docs ${RPM_BUILD_ROOT}%{docsdir}
 
 install bin/activemq.jar ${RPM_BUILD_ROOT}%{homedir}/bin
-install bin/activemq-admin ${RPM_BUILD_ROOT}%{homedir}/bin
 install --directory ${RPM_BUILD_ROOT}/usr/bin
 %{__ln_s} -f %{homedir}/bin/activemq-admin ${RPM_BUILD_ROOT}/usr/bin
 
