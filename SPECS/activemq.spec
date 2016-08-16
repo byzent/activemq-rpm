@@ -139,7 +139,7 @@ rm -rf $RPM_BUILD_ROOT
 %{libdir}/webapps/admin/WEB-INF/web.xml
 %config(noreplace) /etc/httpd/conf.d/activemq-httpd.conf
 %config(noreplace) /etc/%{name}/*
-%attr(755,root,root) /usr/bin/activemq-admin
+%attr(755,root,root) /usr/bin/activemq
 %attr(755,activemq,activemq) %dir /var/log/%{name}
 %attr(755,activemq,activemq) %dir /var/run/%{name}
 %attr(775,root,activemq) %dir %{cachedir}/data
