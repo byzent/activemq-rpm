@@ -14,7 +14,7 @@ Source5: activemq-info-provider
 Patch0: activemq-log4j.properties.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildArch: noarch
-Requires: tanukiwrapper >= 3.2.0
+#Requires: tanukiwrapper >= 3.2.0
 
 %define homedir /usr/share/%{name}
 %define libdir /var/lib/%{name}
@@ -77,7 +77,13 @@ install conf/jetty-realm.properties  ${RPM_BUILD_ROOT}/etc/%{name}
 install README.txt LICENSE NOTICE ${RPM_BUILD_ROOT}%{docsdir}
 cp -r docs ${RPM_BUILD_ROOT}%{docsdir}
 
+install activemq-all-%{version}.jar ${RPM_BUILD_ROOT}%{homedir}
+install bin/activemq ${RPM_BUILD_ROOT}%{homedir}/bin
+install bin/activemq-diag ${RPM_BUILD_ROOT}%{homedir}/bin
+install bin/env ${RPM_BUILD_ROOT}%{homedir}/bin
 install bin/activemq.jar ${RPM_BUILD_ROOT}%{homedir}/bin
+install bin/wrapper.jar ${RPM_BUILD_ROOT}%{homedir}/bin
+
 install --directory ${RPM_BUILD_ROOT}/usr/bin
 %{__ln_s} -f %{homedir}/bin/activemq-admin ${RPM_BUILD_ROOT}/usr/bin
 
@@ -85,7 +91,7 @@ install --directory ${RPM_BUILD_ROOT}/usr/bin
 cp -r lib ${RPM_BUILD_ROOT}%{libdir}
 cp -r webapps/admin ${RPM_BUILD_ROOT}%{libdir}/webapps
 cp -r webapps/api ${RPM_BUILD_ROOT}%{libdir}/webapps
-
+cp -r bin/linux-x86-64 ${RPM_BUILD_ROOT}%{homedir}/bin
 
 # Info provider
 install %{SOURCE5} ${RPM_BUILD_ROOT}/%{libexecdir}/info-provider-activemq
