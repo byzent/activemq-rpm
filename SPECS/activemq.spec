@@ -47,6 +47,7 @@ install --directory ${RPM_BUILD_ROOT}
 
 %install
 rm -rf $RPM_BUILD_ROOT
+LDFLAGS+=--build-id
 install --directory ${RPM_BUILD_ROOT}%{homedir}
 install --directory ${RPM_BUILD_ROOT}%{homedir}/bin
 install --directory ${RPM_BUILD_ROOT}%{docsdir}
