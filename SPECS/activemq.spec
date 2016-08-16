@@ -13,7 +13,7 @@ Source4: activemq-httpd.conf
 Source5: activemq-info-provider
 Patch0: activemq-log4j.properties.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-BuildArch: noarch
+BuildArch: x86_64
 #Requires: tanukiwrapper >= 3.2.0
 
 %define homedir /usr/share/%{name}
