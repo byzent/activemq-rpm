@@ -22,6 +22,8 @@ BuildArch: noarch
 %define cachedir /var/cache/%{name}
 %define docsdir /usr/share/doc/%{name}-%{version}
 
+%undefine _missing_build_ids_terminate_build
+
 %description
 ApacheMQ is a JMS Compliant Messaging System
 
@@ -47,7 +49,6 @@ install --directory ${RPM_BUILD_ROOT}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-LDFLAGS+=--build-id
 install --directory ${RPM_BUILD_ROOT}%{homedir}
 install --directory ${RPM_BUILD_ROOT}%{homedir}/bin
 install --directory ${RPM_BUILD_ROOT}%{docsdir}
