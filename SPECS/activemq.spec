@@ -87,7 +87,7 @@ install bin/activemq.jar ${RPM_BUILD_ROOT}%{homedir}/bin
 install bin/wrapper.jar ${RPM_BUILD_ROOT}%{homedir}/bin
 
 install --directory ${RPM_BUILD_ROOT}/usr/bin
-%{__ln_s} -f %{homedir}/bin/activemq-admin ${RPM_BUILD_ROOT}/usr/bin
+%{__ln_s} -f %{homedir}/bin/activemq ${RPM_BUILD_ROOT}/usr/bin
 
 # Runtime directory
 cp -r lib ${RPM_BUILD_ROOT}%{libdir}
